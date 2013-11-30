@@ -30,7 +30,7 @@ public class StringBufferTest
     	buffer.addContent("Eytan");
     	assertEquals("Eytan", buffer.getContent());
     	assertTrue(buffer.contentCapacity() == 10);
-    	assertEquals(5, buffer.getContentLength());
+    	assertEquals(5, buffer.contentLength());
     }
     
     @Test
@@ -40,6 +40,8 @@ public class StringBufferTest
     	assertTrue(buffer.contentCapacity() == 10);
     	buffer.addContent("Eytan Anjel");
     	assertTrue(buffer.contentCapacity() == 20);
+    	assertEquals("Eytan Anjel", buffer.getContent());
+    	assertTrue(buffer.contentLength() == 11);
     }
 
 }

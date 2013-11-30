@@ -34,7 +34,7 @@ public class MyStringBuffer
 		}
 	}
 
-	public int getContentLength()
+	public int contentLength()
 	{
 		return getContent().length();
 	}
