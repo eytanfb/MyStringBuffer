@@ -27,9 +27,10 @@ public class MyStringBuffer
 			doubleCapacity();
 		}
 		char[] newContent = contentToAdd.toCharArray();
+		int startIndex = contentLength();
 		for(int i = 0; i < newContent.length; i++)
 		{
-			content[i] = newContent[i];
+			content[startIndex+i] = newContent[i];
 		}
 	}
 

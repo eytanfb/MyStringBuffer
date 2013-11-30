@@ -56,6 +56,10 @@ public class StringBufferTest
     	assertEquals("Eytan", buffer.getContent());
     	assertTrue(buffer.contentCapacity() == 10);
     	assertEquals(5, buffer.contentLength());
+    	buffer.addContent("Anjel");
+    	assertEquals("EytanAnjel", buffer.getContent());
+    	assertTrue(buffer.contentCapacity() == 10);
+    	assertEquals(10, buffer.contentLength());
     }
 
 }
