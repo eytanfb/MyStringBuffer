@@ -47,5 +47,15 @@ public class StringBufferTest
     	assertEquals("Eytan Anjel", buffer.getContent());
     	assertTrue(buffer.contentLength() == 11);
     }
+    
+    @Test
+    public void testAddMultipleContentWithinCapacity()
+    {
+    	preconditions();
+    	buffer.addContent("Eytan");
+    	assertEquals("Eytan", buffer.getContent());
+    	assertTrue(buffer.contentCapacity() == 10);
+    	assertEquals(5, buffer.contentLength());
+    }
 
 }
