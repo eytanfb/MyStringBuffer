@@ -22,11 +22,16 @@ public class StringBufferTest
         assertEquals("", buffer.getContent());
     }
     
-    @Test
-    public void testAddContentWithinCapacity()
+    public void preconditions()
     {
     	assertEquals("", buffer.getContent());
     	assertTrue(buffer.contentCapacity() == 10);
+    }
+    
+    @Test
+    public void testAddContentWithinCapacity()
+    {
+    	preconditions();
     	buffer.addContent("Eytan");
     	assertEquals("Eytan", buffer.getContent());
     	assertTrue(buffer.contentCapacity() == 10);
@@ -36,8 +41,7 @@ public class StringBufferTest
     @Test
     public void testAddContentOverCapacity()
     {
-    	assertEquals("", buffer.getContent());
-    	assertTrue(buffer.contentCapacity() == 10);
+    	preconditions();
     	buffer.addContent("Eytan Anjel");
     	assertTrue(buffer.contentCapacity() == 20);
     	assertEquals("Eytan Anjel", buffer.getContent());
