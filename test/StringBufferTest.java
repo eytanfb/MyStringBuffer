@@ -61,5 +61,19 @@ public class StringBufferTest
     	assertTrue(buffer.contentCapacity() == 10);
     	assertEquals(10, buffer.contentLength());
     }
+    
+    @Test
+    public void testAddMultipleContentOverCapacity()
+    {
+    	preconditions();
+    	buffer.addContent("Eytan");
+    	assertEquals("Eytan", buffer.getContent());
+    	assertTrue(buffer.contentCapacity() == 10);
+    	assertEquals(5, buffer.contentLength());
+    	buffer.addContent("Anjel Pro");
+    	assertEquals("EytanAnjel Pro", buffer.getContent());
+    	assertTrue(buffer.contentCapacity() == 20);
+    	assertEquals(14, buffer.contentLength());
+    }
 
 }

@@ -22,16 +22,27 @@ public class MyStringBuffer
 
 	public void addContent(String contentToAdd)
 	{
-		if(contentToAdd.length() > capacity)
+		System.out.println(contentToAdd);
+		if(contentToAdd.length() + contentLength() > capacity)
 		{
-			doubleCapacity();
+			if(getContent().equals("")) 
+				doubleCapacity();
+			else
+				doubleCapacityWithContent(content);
 		}
 		char[] newContent = contentToAdd.toCharArray();
 		int startIndex = contentLength();
 		for(int i = 0; i < newContent.length; i++)
 		{
+			System.out.println(startIndex + i);
 			content[startIndex+i] = newContent[i];
 		}
+	}
+
+	private void doubleCapacityWithContent(char[] currentContent)
+	{
+		doubleCapacity();
+		System.arraycopy(currentContent, 0, content, 0, currentContent.length);
 	}
 
 	private void doubleCapacity()
