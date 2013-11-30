@@ -27,10 +27,19 @@ public class StringBufferTest
     {
     	assertEquals("", buffer.getContent());
     	assertTrue(buffer.contentCapacity() == 10);
-    	buffer.addContent(new String("Eytan"));
+    	buffer.addContent("Eytan");
     	assertEquals("Eytan", buffer.getContent());
     	assertTrue(buffer.contentCapacity() == 10);
     	assertEquals(5, buffer.getContentLength());
+    }
+    
+    @Test
+    public void testAddContentOverCapacity()
+    {
+    	assertEquals("", buffer.getContent());
+    	assertTrue(buffer.contentCapacity() == 10);
+    	buffer.addContent("Eytan Anjel");
+    	
     }
 
 }
