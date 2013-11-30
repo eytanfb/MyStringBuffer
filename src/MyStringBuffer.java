@@ -2,10 +2,12 @@
 public class MyStringBuffer
 {
 	private char[] content;
+	private int capacity;
 	
 	public MyStringBuffer()
 	{
-		content = new char[10];	
+		content = new char[10];
+		capacity = 10;
 	}
 	
 	public String getContent()
@@ -15,11 +17,16 @@ public class MyStringBuffer
 	
 	public int contentCapacity()
 	{
-		return content.length;
+		return capacity;
 	}
 
 	public void addContent(String contentToAdd)
 	{
+		if(contentToAdd.length() > capacity)
+		{
+			content = new char[capacity*2];
+			capacity *= 2;
+		}
 		char[] newContent = contentToAdd.toCharArray();
 		for(int i = 0; i < newContent.length; i++)
 		{
