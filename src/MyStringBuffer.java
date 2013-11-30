@@ -24,14 +24,19 @@ public class MyStringBuffer
 	{
 		if(contentToAdd.length() > capacity)
 		{
-			content = new char[capacity*2];
-			capacity *= 2;
+			doubleCapacity();
 		}
 		char[] newContent = contentToAdd.toCharArray();
 		for(int i = 0; i < newContent.length; i++)
 		{
 			content[i] = newContent[i];
 		}
+	}
+
+	private void doubleCapacity()
+	{
+		content = new char[capacity*2];
+		capacity *= 2;
 	}
 
 	public int contentLength()
