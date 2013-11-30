@@ -75,5 +75,19 @@ public class StringBufferTest
     	assertTrue(buffer.contentCapacity() == 20);
     	assertEquals(14, buffer.contentLength());
     }
+    
+    @Test
+    public void testAddMultipleContentWithSecondContentMoreThanTheCapacity()
+    {
+    	preconditions();
+    	buffer.addContent("Eytan");
+    	assertEquals("Eytan", buffer.getContent());
+    	assertTrue(buffer.contentCapacity() == 10);
+    	assertEquals(5, buffer.contentLength());
+    	buffer.addContent("Anjel is a TDD practicing Programmer");
+    	assertEquals("EytanAnjel is a TDD practicing Programmer", buffer.getContent());
+    	assertTrue(buffer.contentCapacity() == 80);
+    	assertEquals(41, buffer.contentLength());
+    }
 
 }
