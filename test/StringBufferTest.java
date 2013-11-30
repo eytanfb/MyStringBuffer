@@ -39,7 +39,7 @@ public class StringBufferTest
     	assertEquals("", buffer.getContent());
     	assertTrue(buffer.contentCapacity() == 10);
     	buffer.addContent("Eytan Anjel");
-    	
+    	assertTrue(buffer.contentCapacity() == 20);
     }
 
 }
