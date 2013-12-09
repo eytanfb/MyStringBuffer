@@ -25,7 +25,7 @@ public class StringBufferTest
     public void preconditions()
     {
     	assertEquals("", buffer.getContent());
-    	assertTrue(buffer.contentCapacity() == 10);
+    	assertEquals(10, buffer.contentCapacity());
     }
     
     @Test
@@ -34,7 +34,7 @@ public class StringBufferTest
     	preconditions();
     	buffer.addContent("Eytan");
     	assertEquals("Eytan", buffer.getContent());
-    	assertTrue(buffer.contentCapacity() == 10);
+    	assertEquals(10, buffer.contentCapacity());
     	assertEquals(5, buffer.contentLength());
     }
     
@@ -43,9 +43,9 @@ public class StringBufferTest
     {
     	preconditions();
     	buffer.addContent("Eytan Anjel");
-    	assertTrue(buffer.contentCapacity() == 20);
+    	assertEquals(20, buffer.contentCapacity());
     	assertEquals("Eytan Anjel", buffer.getContent());
-    	assertTrue(buffer.contentLength() == 11);
+    	assertEquals(buffer.contentLength(), 11);
     }
     
     @Test
@@ -54,11 +54,11 @@ public class StringBufferTest
     	preconditions();
     	buffer.addContent("Eytan");
     	assertEquals("Eytan", buffer.getContent());
-    	assertTrue(buffer.contentCapacity() == 10);
+    	assertEquals(10, buffer.contentCapacity());
     	assertEquals(5, buffer.contentLength());
     	buffer.addContent("Anjel");
     	assertEquals("EytanAnjel", buffer.getContent());
-    	assertTrue(buffer.contentCapacity() == 10);
+    	assertEquals(10, buffer.contentCapacity());
     	assertEquals(10, buffer.contentLength());
     }
     
@@ -68,11 +68,11 @@ public class StringBufferTest
     	preconditions();
     	buffer.addContent("Eytan");
     	assertEquals("Eytan", buffer.getContent());
-    	assertTrue(buffer.contentCapacity() == 10);
+    	assertEquals(10, buffer.contentCapacity());
     	assertEquals(5, buffer.contentLength());
     	buffer.addContent("Anjel Pro");
     	assertEquals("EytanAnjel Pro", buffer.getContent());
-    	assertTrue(buffer.contentCapacity() == 20);
+    	assertEquals(20, buffer.contentCapacity());
     	assertEquals(14, buffer.contentLength());
     }
     
@@ -82,11 +82,11 @@ public class StringBufferTest
     	preconditions();
     	buffer.addContent("Eytan");
     	assertEquals("Eytan", buffer.getContent());
-    	assertTrue(buffer.contentCapacity() == 10);
+    	assertEquals(10, buffer.contentCapacity());
     	assertEquals(5, buffer.contentLength());
     	buffer.addContent("Anjel is a TDD practicing Programmer");
     	assertEquals("EytanAnjel is a TDD practicing Programmer", buffer.getContent());
-    	assertTrue(buffer.contentCapacity() == 80);
+    	assertEquals(80, buffer.contentCapacity());
     	assertEquals(41, buffer.contentLength());
     }
 
